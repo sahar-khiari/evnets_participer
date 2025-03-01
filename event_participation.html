@@ -58,11 +58,11 @@
 <div class="container">
     <h2>Event Details</h2>
     <div class="details">
-        <p><strong>User:</strong> JohnDoe</p>
-        <p><strong>Event:</strong> Tech Conference 2025</p>
-        <p><strong>Date:</strong> April 10, 2025</p>
-        <p><strong>Location:</strong> Paris</p>
-        <p><strong>Role:</strong> Jury</p>
+        <p><strong>User:</strong> <span id="username"></span></p>
+        <p><strong>Event:</strong> <span id="eventName"></span></p>
+        <p><strong>Date:</strong> <span id="eventDate"></span></p>
+        <p><strong>Location:</strong> <span id="eventLocation"></span></p>
+        <p><strong>Role:</strong> <span id="userRole"></span></p>
     </div>
 
     <a href="#" class="button">View Event Details</a>
@@ -71,6 +71,24 @@
 <div class="footer">
     <p>&copy; 2025 Event Management System</p>
 </div>
+
+<script>
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('event_id');
+    const username = urlParams.get('username');
+    const role = urlParams.get('role');
+
+    // Display the event details dynamically
+    document.getElementById('username').textContent = username || 'Unknown User';
+    document.getElementById('eventName').textContent = 'Tech Conference 2025'; // Update this based on your event details
+    document.getElementById('eventDate').textContent = 'April 10, 2025'; // Update this based on your event details
+    document.getElementById('eventLocation').textContent = 'Paris'; // Update this based on your event details
+    document.getElementById('userRole').textContent = role || 'No role specified';
+
+    // Optionally, you can fetch event details dynamically using eventId if needed
+    console.log(`Event ID: ${eventId}, Username: ${username}, Role: ${role}`);
+</script>
 
 </body>
 </html>
