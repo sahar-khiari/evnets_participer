@@ -66,17 +66,20 @@
     const eventId = urlParams.get('event_id');
     const username = urlParams.get('username');
     const role = urlParams.get('role');
+    const eventName = urlParams.get('event');
+    const eventDate = urlParams.get('date');
+    const eventLocation = urlParams.get('location');
 
     // Display the event details dynamically
     document.getElementById('username').textContent = username || 'Unknown User';
-    document.getElementById('eventName').textContent = 'Tech Conference 2025'; // Update this based on your event details
-    document.getElementById('eventDate').textContent = 'April 10, 2025'; // Update this based on your event details
-    document.getElementById('eventLocation').textContent = 'Paris'; // Update this based on your event details
+    document.getElementById('eventName').textContent = eventName || 'Unknown Event';
+    document.getElementById('eventDate').textContent = eventDate || 'No date specified';
+    document.getElementById('eventLocation').textContent = eventLocation || 'No location specified';
     document.getElementById('userRole').textContent = role || 'No role specified';
 
-    // Optionally, you can fetch event details dynamically using eventId if needed
     console.log(`Event ID: ${eventId}, Username: ${username}, Role: ${role}`);
 </script>
+
 
 </body>
 </html>
